@@ -34,7 +34,7 @@ bindsym $mod+Return exec i3-sensible-terminal
 
 # kill focused window
 bindsym $mod+Shift+q kill
-
+bindsym $mod+Control+l exec --no-startup-id ~/dotfiles/lock/lock.sh
 # start dmenu (a program launcher)
 bindsym $mod+d exec rofi -show run
 # There also is the (new) i3-dmenu-desktop which only displays applications
