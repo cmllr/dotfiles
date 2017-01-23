@@ -93,28 +93,39 @@ bindsym $mod+a focus parent
 #bindsym $mod+d focus child
 
 # switch to workspace
-bindsym $mod+1 workspace 1
-bindsym $mod+2 workspace 2
-bindsym $mod+3 workspace 3
-bindsym $mod+4 workspace 4
-bindsym $mod+5 workspace 5
-bindsym $mod+6 workspace 6
-bindsym $mod+7 workspace 7
-bindsym $mod+8 workspace 8
-bindsym $mod+9 workspace 9
+bindsym $mod+1 workspace 1  web 
+bindsym $mod+2 workspace 2  code
+bindsym $mod+3 workspace 3  term
+bindsym $mod+4 workspace 4  rdp
+bindsym $mod+5 workspace 5  sound
+bindsym $mod+6 workspace 6  chat
+bindsym $mod+7 workspace 7  mail
+bindsym $mod+8 workspace 8  files
+bindsym $mod+9 workspace 9 
 bindsym $mod+0 workspace 10
 
+bindsym $mod+Shift+1 move container to workspace number 1  web
+bindsym $mod+Shift+2 move container to workspace number 2  code
+bindsym $mod+Shift+3 move container to workspace number 3  term
+bindsym $mod+Shift+4 move container to workspace number 4  rdp
+bindsym $mod+Shift+5 move container to workspace number 5  sound
+bindsym $mod+Shift+6 move container to workspace number 6  chat
+bindsym $mod+Shift+7 move container to workspace number 7  mail
+bindsym $mod+Shift+8 move container to workspace number 8  files
+
+for_window [title="Spotify"] move container to workspace 5  sound
+for_window [class="Pidgin"] move container to workspace 6  chat
+for_window [class="Evolution"] move container to workspace 7  mail
+for_window [class="Thunderbird"] move container to workspace 7  mail
+for_window [class="Remmina"] move container to workspace 4  rdp
+for_window [title="Visual Studio Code"] move container to workspace 2  code
+for_window [title="Google Chrome"] move container to workspace 1  web
+for_window [title=": ~"] move container to workspace 3  term
+
 # move focused container to workspace
-bindsym $mod+Shift+1 move container to workspace 1
-bindsym $mod+Shift+2 move container to workspace 2
-bindsym $mod+Shift+3 move container to workspace 3
-bindsym $mod+Shift+4 move container to workspace 4
-bindsym $mod+Shift+5 move container to workspace 5
-bindsym $mod+Shift+6 move container to workspace 6
-bindsym $mod+Shift+7 move container to workspace 7
-bindsym $mod+Shift+8 move container to workspace 8
 bindsym $mod+Shift+9 move container to workspace 9
 bindsym $mod+Shift+0 move container to workspace 10
+
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -155,6 +166,7 @@ client.focused #2c3e50R  #2c3e50R #ecf0f1 #95a5a6 #2c3e50R
 
 
 bar {
+        font  xft:Monospace 10, FontAwesome 10
         status_command i3blocks
         tray_output primary
 	colors {
